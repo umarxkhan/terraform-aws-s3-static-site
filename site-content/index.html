@@ -1,156 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mubarak Ahmad Khan | DevOps & Cloud Engineer Portfolio</title>
   <style>
     body {
-      margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9; color: #222;
-      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      line-height: 1.5;
     }
+
     header {
-      background: #004080; color: white; padding: 30px 20px;
+      background: #004080;
+      color: white;
+      padding: 20px 20px;
       text-align: center;
     }
+
     header h1 {
-      margin: 0; font-size: 2.5rem;
+      margin: 0;
+      font-size: 2.5rem;
     }
+
     header p {
-      margin: 5px 0 0;
+      margin: 1px 0 0;
       font-weight: 300;
       font-size: 1.2rem;
     }
+
     main {
-      max-width: 900px; margin: 30px auto; padding: 0 20px;
-      background: white; box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 2px auto;
+      padding: 0 20px;
+      background: white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
     }
+
     section {
-      padding: 20px 0;
+      padding: 5px 0;
       border-bottom: 1px solid #ddd;
     }
+
     section:last-child {
       border-bottom: none;
     }
+
     h2 {
       color: #004080;
       border-bottom: 2px solid #004080;
-      padding-bottom: 6px;
-      margin-bottom: 15px;
+      padding-bottom: 3px;
+      margin-bottom: 2px;
     }
+
     ul {
       padding-left: 20px;
     }
-    ul.skills, ul.projects, ul.certificates {
+
+    ul.skills,
+    ul.projects,
+    ul.certificates {
       list-style-type: square;
     }
+
     .contact-info a {
       color: #004080;
       text-decoration: none;
       font-weight: bold;
     }
+
     .contact-info a:hover {
       text-decoration: underline;
     }
+
     .flex-container {
-      display: flex; flex-wrap: wrap; gap: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
     }
+
     .flex-item {
       flex: 1 1 45%;
       min-width: 280px;
     }
+
     footer {
-      text-align: center; padding: 15px; color: #666; font-size: 0.9rem;
+      text-align: center;
+      padding: 15px;
+      color: #666;
+      font-size: 0.9rem;
       margin-top: 40px;
     }
+
     @media (max-width: 600px) {
       .flex-container {
         flex-direction: column;
       }
+
       .flex-item {
         flex-basis: 100%;
       }
     }
+
+    a.link-arrow {
+      text-decoration: none;
+      color: #004080;
+      font-weight: 600;
+    }
+
+    a.link-arrow::after {
+      content: "🔗";
+      display: inline-block;
+      margin-left: 6px;
+      font-size: 0.9em;
+      vertical-align: middle;
+      transition: transform 0.2s ease;
+      color: #004080 !important;
+    }
+
+    a.link-arrow:hover::after {
+      transform: translateY(-1px) scale(1.1);
+    }
+
+    .contact-icons {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: #ddd;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      font-weight: 500;
+    }
+
+    .contact-icons a,
+    .contact-icons span {
+      color: #eee;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .contact-icons a:hover {
+      color: #aaddff;
+      text-decoration: underline;
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ddd;
+    }
+
+    .header-text {
+      text-align: center;
+      max-width: 700px;
+    }
+
+    header h1 {
+      margin: 0 0 6px 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 0 0 12px 0;
+      font-weight: 300;
+      font-size: 1.2rem;
+    }
+
+    /* Adjust contact icons justify to flex-start for left alignment */
+    .contact-icons {
+      justify-content: flex-start;
+    }
+
+    .skills-group p {
+      margin: 10px 0;
+      line-height: 1.5;
+    }
+
+    .skills-group strong {
+      color: #004080;
+    }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>Mubarak Ahmad Khan</h1>
-    <p>DevOps / Cloud Engineer (Junior) | Certified AWS Solutions Architect</p>
+    <div class="header-flex">
+      <img src="job_pic.jpg" alt="Mubarak Ahmad Khan Bahadur" class="profile-pic" />
+      <div class="header-text">
+        <h1>Mubarak Ahmad Khan</h1>
+        <p>DevOps / Cloud Engineer (Junior) | Certified AWS Solutions Architect</p>
+        <div class="contact-icons">
+          <a href="mailto:mubarak.khan@outlook.com" title="Email">📧 mubarak.khan@outlook.com</a>
+          <a href="tel:+4915758196984" title="Phone">📞 +49 1575 8196984</a>
+          <span title="Location">📍 Weimar, Germany</span>
+          <a href="https://linkedin.com/in/khanmubarak" target="_blank" rel="noopener noreferrer" title="LinkedIn">🔗
+            LinkedIn</a>
+        </div>
+      </div>
+    </div>
   </header>
+
   <main>
     <section>
       <h2>About Me</h2>
-      <p>Certified AWS Solutions Architect and self-taught Cloud Engineer with hands-on experience in AWS, Python, Terraform, Docker, and CI/CD. Skilled in AWS VPC, Kubernetes, Linux environments, network security, and virtual network management. Passionate about automation, cloud security, scalable infrastructure, and continuous learning.</p>
+      <p>Certified AWS Solutions Architect and self-taught Cloud Engineer with hands-on experience in AWS, Python,
+        Terraform, Docker, and CI/CD. Skilled in AWS VPC, Kubernetes, Linux environments, network security, and virtual
+        network management. Passionate about automation, cloud security, scalable infrastructure, and continuous
+        learning.</p>
     </section>
     <section>
       <h2>Skills</h2>
-      <ul class="skills flex-container">
-        <li class="flex-item">AWS (EC2, S3, VPC, IAM, CloudWatch)</li>
-        <li class="flex-item">Terraform & CloudFormation</li>
-        <li class="flex-item">Docker & Kubernetes</li>
-        <li class="flex-item">Python & CI/CD Pipelines (GitLab)</li>
-        <li class="flex-item">Networking & Security Groups</li>
-        <li class="flex-item">TensorFlow & Image Analysis</li>
-        <li class="flex-item">WordPress & Web Design</li>
-        <li class="flex-item">Linux & VMware vSphere</li>
-      </ul>
+      <div class="skills-group">
+        <p><strong>Cloud & DevOps:</strong><br>
+          AWS (EC2, S3, VPC, IAM, RDS, Lambda, CloudFormation, CloudWatch), Terraform, Docker, Kubernetes, GitLab CI/CD,
+          AWS CLI
+        </p>
+        <p><strong>Programming & Tools:</strong><br>
+          Python, Java, Git, Bash, Amazon CLI, MATLAB, WordPress
+        </p>
+        <p><strong>Machine Learning & Frameworks:</strong><br>
+          TensorFlow, YOLO, KNN, OpenCV, Scikit-learn, NumPy
+        </p>
+        <p><strong>Infrastructure & Virtualization:</strong><br>
+          Networking, VMware vSphere, Security Groups, Infrastructure as Code
+        </p>
+      </div>
     </section>
+
     <section>
       <h2>Projects</h2>
       <ul class="projects">
-        <li><strong>Thesis:</strong> Digital Twin for RC Beam - Python, Abaqus, XFEM, DFOS (12/2024 - 06/2025)</li>
-        <li><strong>Autonomous Driving Simulation:</strong> CARLA Simulator with YOLO and TensorFlow (04/2023 - 09/2023)</li>
-        <li><strong>Image Analysis:</strong> Crack Detection on Surfaces using Python, OpenCV (09/2023 - 03/2024)</li>
-        <li><strong>Terraform AWS Infrastructure Deployment</strong></li>
-        <li><strong>CI/CD Pipelines:</strong> Automated deployments reducing setup time by 40%</li>
+        <li>
+          <strong><a href="https://github.com/umarxkhan/terraform-aws-project" target="_blank" class="link-arrow">
+              AWS VPC and EC2 Infrastructure Setup (Terraform)
+            </a></strong><br>
+          Modular VPC setup with EC2 using Terraform. <em>Tech:</em> Terraform, AWS VPC, EC2, Subnets, Route Tables,
+          Security Groups, GitHub.
+        </li>
+        <li>
+          <strong><a href="https://github.com/umarxkhan/terraform-aws-s3-static-site" target="_blank"
+              class="link-arrow">
+              AWS S3 Static Website Deployment (Terraform)
+            </a></strong><br>
+          Automated S3 bucket provisioning and static site hosting. <em>Tech:</em> Terraform, AWS S3, IAM Policies,
+          GitHub.
+        </li>
+        <li>
+          <strong><a href="https://gitlab.com/umarxkhan/carlasim" target="_blank" class="link-arrow">
+              Autonomous Driving Simulation using CARLA
+            </a></strong><br>
+          Real-time object detection with YOLO and TensorFlow. <em>Tech:</em> CARLA, Python, YOLO, TensorFlow, KNN,
+          Radar/Camera Sensors.
+        </li>
+        <li>
+          <strong><a href="https://github.com/umarxkhan/Img_anl_obj_rec" target="_blank" class="link-arrow">
+              Image Analysis and Object Recognition
+            </a></strong><br>
+          Object detection and classification using deep learning models. <em>Tech:</em> Python, TensorFlow, OpenCV,
+          YOLO.
+        </li>
+        <li>
+          <strong><span style="color: #004080;">Thesis:</span></strong> Digital Twin for RC Beam (12/2024 - 06/2025)<br>
+          Python-integrated Abaqus model based on DFOS data. <em>Tech:</em> Python, Abaqus, XFEM, CZM, CDP, DFOS.
+        </li>
+
+
       </ul>
     </section>
     <section>
       <h2>Work Experience</h2>
-      <p><strong>Freelance AWS Operations & Web Designer</strong> (05/2023 - 07/2025)</p>
+      <p style="color: #004080;"><strong>Freelance AWS Operations & Web Designer</strong> (05/2023 - 07/2025)</p>
       <ul>
         <li>Managed AWS infrastructure (15+ EC2, 10+ S3, 3 RDS) with 99.9% uptime.</li>
         <li>Secured infrastructure with IAM roles, VPCs, and CloudWatch alerts, reducing incident response by 40%.</li>
-        <li>Implemented payment setups and delivered 12+ WordPress websites with faster load times and high client satisfaction.</li>
+        <li>Implemented payment setups and delivered 12+ WordPress websites with faster load times and high client
+          satisfaction.</li>
       </ul>
     </section>
     <section>
       <h2>Education</h2>
-      <p><strong>MSc Digital Engineering</strong><br />
-         Bauhaus University Weimar, Germany (09/2021 - 07/2025)</p>
-      <p>Relevant Courses: Object Oriented Programming, Algorithms & Data Structures, Software Engineering, Computer Vision, Image Recognition</p>
+      <p style="margin-bottom: 2px;color: #004080;">
+        <strong>MSc Digital Engineering</strong><br />
+        <span style="font-style: normal; font-size: 1em; color: #222;">Bauhaus University Weimar, Germany (09/2021 -
+          07/2025)</span>
+      </p>
+      <p style="font-size: 0.85em; font-style: italic; color: #555; margin-top: 2px;">
+        Relevant Courses: Object Oriented Programming, Algorithms & Data Structures, Software Engineering, Computer
+        Vision, Image Recognition
+      </p>
     </section>
+
+
+    <style>
+      .edu-university {
+        display: block;
+        margin-bottom: 4px;
+        /* less vertical space */
+      }
+
+      .courses-line {
+        font-size: 0.85em;
+        font-style: italic;
+        color: #555;
+        margin-top: 0;
+        /* remove top margin */
+      }
+    </style>
+
+
+    <style>
+      .edu-university {
+        display: block;
+        margin-bottom: 4px;
+        /* less vertical space */
+      }
+
+      .courses-line {
+        font-size: 0.85em;
+        font-style: italic;
+        color: #555;
+        margin-top: 0;
+        /* remove top margin */
+      }
+
+      .courses-label {
+        font-weight: normal;
+        margin-right: 4px;
+      }
+    </style>
+
+
+    <style>
+      .courses-label {
+        font-size: 0.85em;
+        font-style: italic;
+        color: #555;
+        font-weight: normal;
+        margin-right: 4px;
+      }
+    </style>
+
     <section>
       <h2>Certifications & Training</h2>
       <ul class="certificates">
-        <li>AWS Certified Solutions Architect - Associate (Dec 2024)</li>
-        <li>Docker Certified Associate (March 2025)</li>
-        <li>HashiCorp Certified Terraform Associate (Feb 2025)</li>
-        <li>Introduction to Kubernetes (Jan 2025)</li>
-        <li>AWS Certified Developer - Associate (Aug 2024)</li>
+        <li><a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/247a783be81e4b35bfaeaa7c2f49250f"
+            target="_blank" rel="noopener noreferrer" class="link-arrow">
+            AWS Certified Solutions Architect - Associate (Dec 2024)
+          </a></li>
+        <li><a href="https://www.credly.com/badges/6165e5f7-ee56-42c2-b804-256fa15f0f01" target="_blank"
+            rel="noopener noreferrer" class="link-arrow">
+            Solutions Architect Knowledge Badge Assessment (Dec 2024)
+          </a></li>
       </ul>
     </section>
+    <section>
+      <h2>Professional Training</h2>
+      <ul class="certificates">
+        <li>
+          Docker Certified Associate (DCA) <span class="training-info">Completed via A Cloud Guru, March 2025</span>
+        </li>
+        <li>
+          HashiCorp Certified Terraform Associate <span class="training-info">Completed via A Cloud Guru, February
+            2025</span>
+        </li>
+        <li>
+          Introduction to Kubernetes <span class="training-info">Completed via A Cloud Guru, January 2025</span>
+        </li>
+        <li>
+          AWS Certified Solutions Architect - Associate (SAA-C03) <span class="training-info">Completed via A Cloud
+            Guru, November 2024</span>
+        </li>
+        <li>
+          AWS Certified Developer - Associate (DVA-C02) <span class="training-info">Completed via A Cloud Guru, August
+            2024</span>
+        </li>
+      </ul>
+    </section>
+
+    <style>
+      .training-info {
+        font-size: 0.85em;
+        font-style: italic;
+        color: #555;
+        margin-left: 6px;
+      }
+    </style>
+
     <section>
       <h2>Languages</h2>
       <ul>
         <li>English - C2 (Native/Bilingual)</li>
-        <li>Urdu/Hindi/Punjabi - C2 (Native/Bilingual)</li>
         <li>German - A2 (Limited Working Proficiency)</li>
+        <li>Urdu/Hindi/Punjabi - C2 (Native/Bilingual)</li>
+
       </ul>
-    </section>
-    <section>
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:mubarak.khan@outlook.com">mubarak.khan@outlook.com</a></p>
-      <p>Phone: <a href="tel:+4915758196984">+49 1575 8196984</a></p>
-      <p>Location: Weimar, Germany</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/khanmubarak" target="_blank" rel="noopener noreferrer">linkedin.com/in/khanmubarak</a></p>
     </section>
   </main>
   <footer>
     &copy; 2025 Mubarak Ahmad Khan. All rights reserved.
   </footer>
 </body>
+
 </html>
