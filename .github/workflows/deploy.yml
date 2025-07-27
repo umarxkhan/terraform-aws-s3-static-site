@@ -20,7 +20,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      - name: Check content in site-content
+        run: ls -l site-content
+
       - name: Sync website content to S3
         run: |
-          aws s3 sync site-content/ s3://mubarak.khan.cloud1.engineer --delete
+          aws s3 sync site-content/ s3://mubarak.khan.cloud1.engineer --acl public-read --delete
 
+      - name: Who am I?
+        run: aws sts get-caller-identity
