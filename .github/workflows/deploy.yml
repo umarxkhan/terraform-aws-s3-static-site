@@ -25,7 +25,7 @@ jobs:
 
       - name: Sync website content to S3
         run: |
-          aws s3 sync site-content/ s3://mubarak.khan.cloud1.engineer --acl public-read --delete
+          aws s3 sync site-content/ s3://mubarak.khan.cloud1.engineer --delete
 
       - name: Who am I?
         run: aws sts get-caller-identity
