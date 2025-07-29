@@ -1,51 +1,47 @@
-Here’s the updated README with your current setup, including GitHub Actions deployment info and the fix about ACLs removed for S3 sync:
-
----
-
 # Terraform AWS S3 Static Website
 
-This Terraform project provisions an AWS S3 bucket configured to host a static website.
+This Terraform project provisions an AWS S3 bucket configured to host a static website.  
 It uploads the content from the `site-content` directory and sets the bucket policy to allow public read access.
 
 ## Features
 
-* Creates an S3 bucket with website hosting enabled
-* Configures index and error documents (`index.html` and `error.html`)
-* Sets public access policies to allow website access
-* Uploads static files from `site-content` folder
-* Outputs the website URL after deployment
-* Automates deployment to S3 using GitHub Actions
+- Creates an S3 bucket with website hosting enabled  
+- Configures index and error documents (`index.html` and `error.html`)  
+- Sets public access policies to allow website access  
+- Uploads static files from `site-content` folder  
+- Outputs the website URL after deployment  
+- Automates deployment to S3 using GitHub Actions  
 
 ## Prerequisites
 
-* Terraform installed (v1.0+ recommended)
-* AWS CLI configured with appropriate credentials (for local use)
-* GitHub repository with GitHub Actions enabled (for CI/CD)
-* Unique S3 bucket name (S3 bucket names must be globally unique)
+- Terraform installed (v1.0+ recommended)  
+- AWS CLI configured with appropriate credentials (for local use)  
+- GitHub repository with GitHub Actions enabled (for CI/CD)  
+- Unique S3 bucket name (S3 bucket names must be globally unique)  
 
 ## Usage
 
 1. Update `terraform.tfvars` with the desired bucket name:
 
-   ```
+   ```hcl
    bucket_name = "your.unique.bucket.name"
-   ```
+````
 
 2. Initialize Terraform:
 
-   ```
+   ```bash
    terraform init
    ```
 
 3. Review the execution plan:
 
-   ```
+   ```bash
    terraform plan
    ```
 
 4. Apply the changes:
 
-   ```
+   ```bash
    terraform apply
    ```
 
@@ -111,7 +107,7 @@ terraform-s3-static-site/
 ├── site-content/         # Static website files (index.html, error.html, etc.)
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml   # GitHub Actions workflow for deployment
+│       └── deploy.yml    # GitHub Actions workflow for deployment
 ```
 
 ## Notes
@@ -126,5 +122,3 @@ terraform-s3-static-site/
 ## License
 
 MIT License
-
----
