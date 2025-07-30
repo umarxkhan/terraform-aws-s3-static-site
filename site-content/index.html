@@ -18,79 +18,32 @@
     header {
       background: #004080;
       color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .header-flex {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #ddd;
-    }
-
-    .header-text {
-      max-width: 700px;
+      padding: 20px 20px;
       text-align: center;
     }
 
     header h1 {
-      margin: 0 0 6px 0;
+      margin: 0;
       font-size: 2.5rem;
     }
 
     header p {
-      margin: 0 0 12px 0;
+      margin: 1px 0 0;
       font-weight: 300;
       font-size: 1.2rem;
     }
 
-    .contact-icons {
-      margin-top: 12px;
-      font-size: 0.9rem;
-      color: #eee;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: flex-start;
-      font-weight: 500;
-    }
-
-    .contact-icons a,
-    .contact-icons span {
-      color: #eee;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-    }
-
-    .contact-icons a:hover {
-      color: #aaddff;
-      text-decoration: underline;
-    }
-
     main {
       max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
+      margin: 2px auto;
+      padding: 0 20px;
       background: white;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
     }
 
     section {
-      padding: 15px 0;
+      padding: 5px 0;
       border-bottom: 1px solid #ddd;
     }
 
@@ -101,21 +54,57 @@
     h2 {
       color: #004080;
       border-bottom: 2px solid #004080;
-      padding-bottom: 6px;
-      margin-bottom: 12px;
-      font-weight: 700;
-      font-size: 1.8rem;
+      padding-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     ul {
       padding-left: 20px;
-      margin: 0;
     }
 
     ul.skills,
     ul.projects,
     ul.certificates {
       list-style-type: square;
+    }
+
+    .contact-info a {
+      color: #004080;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .flex-item {
+      flex: 1 1 45%;
+      min-width: 280px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .flex-container {
+        flex-direction: column;
+      }
+
+      .flex-item {
+        flex-basis: 100%;
+      }
     }
 
     a.link-arrow {
@@ -138,6 +127,69 @@
       transform: translateY(-1px) scale(1.1);
     }
 
+    .contact-icons {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: #ddd;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      font-weight: 500;
+    }
+
+    .contact-icons a,
+    .contact-icons span {
+      color: #eee;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .contact-icons a:hover {
+      color: #aaddff;
+      text-decoration: underline;
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ddd;
+    }
+
+    .header-text {
+      text-align: center;
+      max-width: 700px;
+    }
+
+    header h1 {
+      margin: 0 0 6px 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 0 0 12px 0;
+      font-weight: 300;
+      font-size: 1.2rem;
+    }
+
+    /* Adjust contact icons justify to flex-start for left alignment */
+    .contact-icons {
+      justify-content: flex-start;
+    }
+
     .skills-group p {
       margin: 10px 0;
       line-height: 1.5;
@@ -145,81 +197,6 @@
 
     .skills-group strong {
       color: #004080;
-    }
-
-    /* Contact Form Styles */
-    form#contactForm {
-      max-width: 500px;
-      margin-top: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    form#contactForm label {
-      font-weight: 600;
-      color: #004080;
-    }
-
-    form#contactForm input,
-    form#contactForm textarea {
-      width: 100%;
-      padding: 8px 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-family: inherit;
-      font-size: 1rem;
-      resize: vertical;
-      transition: border-color 0.2s ease;
-    }
-
-    form#contactForm input:focus,
-    form#contactForm textarea:focus {
-      border-color: #004080;
-      outline: none;
-    }
-
-    form#contactForm button {
-      background-color: #004080;
-      color: white;
-      font-weight: 700;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-      align-self: flex-start;
-    }
-
-    form#contactForm button:hover {
-      background-color: #002f5c;
-    }
-
-    #formStatus {
-      margin-top: 8px;
-      font-weight: 600;
-      color: #004080;
-    }
-
-    /* Education & Training tweaks */
-    .training-info {
-      font-size: 0.85em;
-      font-style: italic;
-      color: #555;
-      margin-left: 6px;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .header-flex {
-        flex-direction: column;
-      }
-
-      main {
-        margin: 15px 10px;
-        padding: 15px;
-      }
     }
   </style>
 </head>
@@ -229,15 +206,15 @@
     <div class="header-flex">
       <img src="job_pic.jpg" alt="Mubarak Ahmad Khan" class="profile-pic" />
       <div class="header-text">
-        <h1>Mubarak Ahmad Khan</h1>
+        <h1>Mubarak Ahmad Khan </h1>
         <p>DevOps / Cloud Engineer (Junior) | Certified AWS Solutions Architect</p>
-        <nav class="contact-icons" aria-label="Contact and Social Media">
+        <div class="contact-icons">
           <a href="mailto:mubarak.khan@outlook.com" title="Email">📧 mubarak.khan@outlook.com</a>
           <a href="tel:+4915758196984" title="Phone">📞 +49 1575 8196984</a>
           <span title="Location">📍 Weimar, Germany</span>
           <a href="https://linkedin.com/in/khanmubarak" target="_blank" rel="noopener noreferrer" title="LinkedIn">🔗
             LinkedIn</a>
-        </nav>
+        </div>
       </div>
     </div>
   </header>
@@ -253,18 +230,18 @@
     <section>
       <h2>Skills</h2>
       <div class="skills-group">
-        <p><strong>Cloud & DevOps:</strong><br />
-          AWS (EC2, S3, VPC, IAM, RDS, Lambda, CloudFormation, CloudWatch), Terraform, Docker, Kubernetes, GitHub
-          (Actions),
-          GitLab, AWS CLI
+        <p><strong>Cloud & DevOps:</strong><br>
+          AWS (EC2, S3, VPC, IAM, RDS, Lambda, CloudFormation, CloudWatch), Terraform, Docker, Kubernetes, GitHub (with
+          Actions), GitLab,
+          AWS CLI
         </p>
-        <p><strong>Programming & Tools:</strong><br />
+        <p><strong>Programming & Tools:</strong><br>
           Python, Java, Git, Bash, Amazon CLI, MATLAB, WordPress
         </p>
-        <p><strong>Machine Learning & Frameworks:</strong><br />
+        <p><strong>Machine Learning & Frameworks:</strong><br>
           TensorFlow, YOLO, KNN, OpenCV, Scikit-learn, NumPy
         </p>
-        <p><strong>Infrastructure & Virtualization:</strong><br />
+        <p><strong>Infrastructure & Virtualization:</strong><br>
           Networking, VMware vSphere, Security Groups, Infrastructure as Code
         </p>
       </div>
@@ -274,150 +251,174 @@
       <h2>Projects</h2>
       <ul class="projects">
         <li>
-          <strong><a href="https://github.com/umarxkhan/terraform-aws-project" target="_blank" class="link-arrow"
-              rel="noopener noreferrer">
+          <strong><a href="https://github.com/umarxkhan/terraform-aws-project" target="_blank" class="link-arrow">
               AWS VPC and EC2 Infrastructure Setup (Terraform)
-            </a></strong><br />
+            </a></strong><br>
           Modular VPC setup with EC2 using Terraform. <em>Tech:</em> Terraform, AWS VPC, EC2, Subnets, Route Tables,
           Security Groups, GitHub.
         </li>
         <li>
-          <strong><a href="https://github.com/umarxkhan/terraform-aws-s3-static-site" target="_blank" class="link-arrow"
-              rel="noopener noreferrer">
+          <strong><a href="https://github.com/umarxkhan/terraform-aws-s3-static-site" target="_blank"
+              class="link-arrow">
               AWS S3 Static Website Deployment (Terraform)
-            </a></strong><br />
+            </a></strong><br>
           Automated S3 bucket provisioning and static site hosting. <em>Tech:</em> Terraform, AWS S3, IAM Policies,
           GitHub.
         </li>
         <li>
-          <strong><a href="https://gitlab.com/umarxkhan/carlasim" target="_blank" class="link-arrow"
-              rel="noopener noreferrer">
+          <strong><a href="https://gitlab.com/umarxkhan/carlasim" target="_blank" class="link-arrow">
               Autonomous Driving Simulation using CARLA
-            </a></strong><br />
+            </a></strong><br>
           Real-time object detection with YOLO and TensorFlow. <em>Tech:</em> CARLA, Python, YOLO, TensorFlow, KNN,
           Radar/Camera Sensors.
         </li>
         <li>
-          <strong><a href="https://github.com/umarxkhan/Img_anl_obj_rec" target="_blank" class="link-arrow"
-              rel="noopener noreferrer">
+          <strong><a href="https://github.com/umarxkhan/Img_anl_obj_rec" target="_blank" class="link-arrow">
               Image Analysis and Object Recognition
-            </a></strong><br />
+            </a></strong><br>
           Object detection and classification using deep learning models. <em>Tech:</em> Python, TensorFlow, OpenCV,
           YOLO.
         </li>
         <li>
-          <strong><span style="color: #004080;">Thesis:</span></strong> Digital Twin for RC Beam (12/2024 -
-          06/2025)<br />
-          Python-integrated Abaqus model based on DFOS data to predict crack propagation.
+          <strong><span style="color: #004080;">Thesis:</span></strong> Digital Twin for RC Beam (12/2024 - 06/2025)<br>
+          Python-integrated Abaqus model based on DFOS data. <em>Tech:</em> Python, Abaqus, XFEM, CZM, CDP, DFOS.
         </li>
+
+
       </ul>
     </section>
-
     <section>
-      <h2>Education & Training</h2>
-      <ul class="certificates">
-        <li>
-          <strong>Master of Science, Digital Engineering</strong> <span class="training-info">(FH Erfurt,
-            2023)</span><br />
-          Thesis: Crack propagation model integration with Abaqus using Python
-        </li>
-        <li>
-          <strong>Certified AWS Solutions Architect – Associate</strong> <span class="training-info">(2024)</span>
-        </li>
-        <li>
-          <strong>German Language Course – B1 Preparation</strong> <span class="training-info">(2025)</span>
-        </li>
+      <h2>Work Experience</h2>
+      <p style="color: #004080;"><strong>Freelance AWS Operations & Web Designer</strong> (05/2023 - 07/2025)</p>
+      <ul>
+        <li>Managed AWS infrastructure (15+ EC2, 10+ S3, 3 RDS) with 99.9% uptime.</li>
+        <li>Secured infrastructure with IAM roles, VPCs, and CloudWatch alerts, reducing incident response by 40%.</li>
+        <li>Implemented payment setups and delivered 12+ WordPress websites with faster load times and high client
+          satisfaction.</li>
       </ul>
     </section>
-
     <section>
-      <h2>Contact Me</h2>
-      <form id="contactForm" aria-label="Contact Form" novalidate>
-        <label for="name">Full Name *</label>
-        <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name"
-          minlength="3" />
-
-        <label for="email">Email Address *</label>
-        <input type="email" id="email" name="email" placeholder="your.email@example.com" required
-          autocomplete="email" />
-
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required
-          minlength="10"></textarea>
-
-        <button type="submit" aria-label="Send Message">Send</button>
-        <div id="formStatus" role="status" aria-live="polite"></div>
-      </form>
+      <h2>Education</h2>
+      <p style="margin-bottom: 2px;color: #004080;">
+        <strong>MSc Digital Engineering</strong><br />
+        <span style="font-style: normal; font-size: 1em; color: #222;">Bauhaus University Weimar, Germany (09/2021 -
+          07/2025)</span>
+      </p>
+      <p style="font-size: 0.85em; font-style: italic; color: #555; margin-top: 2px;">
+        Relevant Courses: Object Oriented Programming, Algorithms & Data Structures, Software Engineering, Computer
+        Vision, Image Recognition
+      </p>
     </section>
-  </main>
 
-  <script>
-    (function () {
-      const form = document.getElementById('contactForm');
-      const status = document.getElementById('formStatus');
 
-      function validateEmail(email) {
-        // Basic email pattern
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    <style>
+      .edu-university {
+        display: block;
+        margin-bottom: 4px;
+        /* less vertical space */
       }
 
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+      .courses-line {
+        font-size: 0.85em;
+        font-style: italic;
+        color: #555;
+        margin-top: 0;
+        /* remove top margin */
+      }
+    </style>
 
-        // Clear previous status
-        status.textContent = '';
-        status.style.color = '#004080';
 
-        const name = form.name.value.trim();
-        const email = form.email.value.trim();
-        const message = form.message.value.trim();
+    <style>
+      .edu-university {
+        display: block;
+        margin-bottom: 4px;
+        /* less vertical space */
+      }
 
-        // Basic validation
-        if (name.length < 3) {
-          status.textContent = 'Name must be at least 3 characters.';
-          status.style.color = 'red';
-          return;
-        }
-        if (!validateEmail(email)) {
-          status.textContent = 'Please enter a valid email address.';
-          status.style.color = 'red';
-          return;
-        }
-        if (message.length < 10) {
-          status.textContent = 'Message must be at least 10 characters.';
-          status.style.color = 'red';
-          return;
-        }
+      .courses-line {
+        font-size: 0.85em;
+        font-style: italic;
+        color: #555;
+        margin-top: 0;
+        /* remove top margin */
+      }
 
-        // Disable submit to avoid multiple sends
-        form.querySelector('button[type="submit"]').disabled = true;
-        status.textContent = 'Sending...';
+      .courses-label {
+        font-weight: normal;
+        margin-right: 4px;
+      }
+    </style>
 
-        try {
-          const response = await fetch('YOUR_API_GATEWAY_ENDPOINT_HERE', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, email, message }),
-          });
 
-          if (!response.ok) throw new Error('Network response was not ok.');
+    <style>
+      .courses-label {
+        font-size: 0.85em;
+        font-style: italic;
+        color: #555;
+        font-weight: normal;
+        margin-right: 4px;
+      }
+    </style>
 
-          status.textContent = 'Thank you! Your message has been sent.';
-          status.style.color = 'green';
+    <section>
+      <h2>Certifications & Training</h2>
+      <ul class="certificates">
+        <li><a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/247a783be81e4b35bfaeaa7c2f49250f"
+            target="_blank" rel="noopener noreferrer" class="link-arrow">
+            AWS Certified Solutions Architect - Associate (Dec 2024)
+          </a></li>
+        <li><a href="https://www.credly.com/badges/6165e5f7-ee56-42c2-b804-256fa15f0f01" target="_blank"
+            rel="noopener noreferrer" class="link-arrow">
+            Solutions Architect Knowledge Badge Assessment (Dec 2024)
+          </a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Professional Training</h2>
+      <ul class="certificates">
+        <li>
+          Docker Certified Associate (DCA) <span class="training-info">Completed via A Cloud Guru, March 2025</span>
+        </li>
+        <li>
+          HashiCorp Certified Terraform Associate <span class="training-info">Completed via A Cloud Guru, February
+            2025</span>
+        </li>
+        <li>
+          Introduction to Kubernetes <span class="training-info">Completed via A Cloud Guru, January 2025</span>
+        </li>
+        <li>
+          AWS Certified Solutions Architect - Associate (SAA-C03) <span class="training-info">Completed via A Cloud
+            Guru, November 2024</span>
+        </li>
+        <li>
+          AWS Certified Developer - Associate (DVA-C02) <span class="training-info">Completed via A Cloud Guru, August
+            2024</span>
+        </li>
+      </ul>
+    </section>
 
-          form.reset();
-        } catch (error) {
-          status.textContent = 'Oops! Something went wrong. Please try again later.';
-          status.style.color = 'red';
-          console.error('Form submission error:', error);
-        } finally {
-          form.querySelector('button[type="submit"]').disabled = false;
-        }
-      });
-    })();
-  </script>
+    <style>
+      .training-info {
+        font-size: 0.85em;
+        font-style: italic;
+        color: #555;
+        margin-left: 6px;
+      }
+    </style>
+
+    <section>
+      <h2>Languages</h2>
+      <ul>
+        <li>English - C2 (Native/Bilingual)</li>
+        <li>German - A2 (Limited Working Proficiency)</li>
+        <li>Urdu/Hindi/Punjabi - C2 (Native/Bilingual)</li>
+
+      </ul>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Mubarak Ahmad Khan. All rights reserved.
+  </footer>
 </body>
 
 </html>
