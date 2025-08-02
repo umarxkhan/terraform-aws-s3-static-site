@@ -23,7 +23,7 @@ It uploads the content from the `site-content` directory and sets the bucket pol
 
 1. Update `terraform.tfvars` with the desired bucket name:
 ```hcl
-   bucket_name = "your.unique.bucket.name"
+bucket_name = "your.unique.bucket.name"
 ````
 
 2. Initialize Terraform:
