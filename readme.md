@@ -22,10 +22,9 @@ It uploads the content from the `site-content` directory and sets the bucket pol
 ## Usage
 
 1. Update `terraform.tfvars` with the desired bucket name:
-
    ```hcl
    bucket_name = "your.unique.bucket.name"
-````
+   ````
 
 2. Initialize Terraform:
 
@@ -47,7 +46,7 @@ It uploads the content from the `site-content` directory and sets the bucket pol
 
 5. After successful apply, the website URL will be displayed in the output:
 
-   ```
+   ```bash
    website_url = http://your.unique.bucket.name.s3-website-<region>.amazonaws.com
    ```
 
