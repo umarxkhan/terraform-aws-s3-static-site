@@ -1,520 +1,507 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mubarak Ahmad Khan | DevOps & Cloud Engineer Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9;
-      color: #222;
-      line-height: 1.5;
-    }
-
-    header {
-      background: #004080;
-      color: white;
-      padding: 20px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin: 1px 0 0;
-      font-weight: 300;
-      font-size: 1.2rem;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 2px auto;
-      padding: 0 20px;
-      background: white;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
-
-    section {
-      padding: 5px 0;
-      border-bottom: 1px solid #ddd;
-    }
-
-    section:last-child {
-      border-bottom: none;
-    }
-
-    h2 {
-      color: #004080;
-      border-bottom: 2px solid #004080;
-      padding-bottom: 3px;
-      margin-bottom: 2px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    ul.skills,
-    ul.projects,
-    ul.certificates {
-      list-style-type: square;
-    }
-
-    .contact-info a {
-      color: #004080;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-
-    .flex-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-
-    .flex-item {
-      flex: 1 1 45%;
-      min-width: 280px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      color: #666;
-      font-size: 0.9rem;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 600px) {
-      .flex-container {
-        flex-direction: column;
-      }
-
-      .flex-item {
-        flex-basis: 100%;
-      }
-    }
-
-    a.link-arrow {
-      text-decoration: none;
-      color: #004080;
-      font-weight: 600;
-    }
-
-    a.link-arrow::after {
-      content: "🔗";
-      display: inline-block;
-      margin-left: 6px;
-      font-size: 0.9em;
-      vertical-align: middle;
-      transition: transform 0.2s ease;
-      color: #004080 !important;
-    }
-
-    a.link-arrow:hover::after {
-      transform: translateY(-1px) scale(1.1);
-    }
-
-    .contact-icons {
-      margin-top: 12px;
-      font-size: 0.9rem;
-      color: #ddd;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      font-weight: 500;
-    }
-
-    .contact-icons a,
-    .contact-icons span {
-      color: #eee;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-    }
-
-    .contact-icons a:hover {
-      color: #aaddff;
-      text-decoration: underline;
-    }
-
-    .header-flex {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #ddd;
-    }
-
-    .header-text {
-      text-align: center;
-      max-width: 700px;
-    }
-
-    header h1 {
-      margin: 0 0 6px 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin: 0 0 12px 0;
-      font-weight: 300;
-      font-size: 1.2rem;
-    }
-
-    /* Adjust contact icons justify to flex-start for left alignment */
-    .contact-icons {
-      justify-content: flex-start;
-    }
-
-    .skills-group p {
-      margin: 10px 0;
-      line-height: 1.5;
-    }
-
-    .skills-group strong {
-      color: #004080;
-    }
-
-    form label {
-      font-weight: bold;
-    }
-
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    form button {
-      background-color: #004080;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    form button:hover {
-      background-color: #003060;
-    }
-  </style>
+  <meta name="description"
+    content="Mubarak Ahmad Khan — DevOps & Cloud Engineer specializing in AWS, Terraform, serverless architecture, and CI/CD." />
+  <title>Mubarak Ahmad Khan | DevOps & Cloud Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("portfolio-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      else if (window.matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.setAttribute("data-theme", "dark");
+    })();
+  </script>
 </head>
 
-
-
-
 <body>
-  <header>
-    <div class="header-flex">
-      <img src="job_pic.jpg" alt="Mubarak Ahmad Khan" class="profile-pic" />
-      <div class="header-text">
-        <h1>Mubarak Ahmad Khan </h1>
-        <p>DevOps / Cloud Engineer (Junior) | Certified AWS Solutions Architect</p>
-        <div class="contact-icons">
-          <a href="mailto:mubarak.khan@outlook.com" title="Email">📧 mubarak.khan@outlook.com</a>
-          <a href="tel:+4915758196984" title="Phone">📞 +49 1575 8196984</a>
-          <span title="Location">📍 Weimar, Germany</span>
-          <a href="https://linkedin.com/in/khanmubarak" target="_blank" rel="noopener noreferrer" title="LinkedIn">🔗
-            LinkedIn</a>
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__brand">M.A.<span>Khan</span></a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about" data-section="about">About</a></li>
+        <li><a href="#skills" data-section="skills">Skills</a></li>
+        <li><a href="#projects" data-section="projects">Projects</a></li>
+        <li><a href="#experience" data-section="experience">Experience</a></li>
+        <li><a href="#contact" data-section="contact">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button type="button" class="btn-icon" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+        <button type="button" class="btn-icon nav__toggle" id="navToggle" aria-expanded="false"
+          aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="hero">
+    <div class="container hero__grid">
+      <div class="hero__content reveal">
+        <p class="hero__eyebrow">Available for cloud &amp; DevOps roles</p>
+        <h1 class="hero__title">Mubarak Ahmad Khan</h1>
+        <p class="hero__role">DevOps &amp; Cloud Engineer · AWS Solutions Architect</p>
+        <p class="hero__impact">
+          I design and ship secure, observable AWS platforms — serverless pipelines, Infrastructure as Code,
+          and automated delivery that turn cost and complexity into clarity.
+        </p>
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--primary">View projects</a>
+          <a href="#contact" class="btn btn--ghost">Get in touch</a>
+        </div>
+        <div class="hero__meta">
+          <a href="mailto:mubarak.khan@outlook.com">mubarak.khan@outlook.com</a>
+          <a href="tel:+4915758196984">+49 1575 8196984</a>
+          <span>Weimar, Germany</span>
+          <a href="https://linkedin.com/in/khanmubarak" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero__visual reveal reveal-delay-1">
+        <div class="hero__photo-wrap">
+          <img src="job_pic.jpg" alt="Mubarak Ahmad Khan" class="hero__photo" width="320" height="320" />
         </div>
       </div>
     </div>
   </header>
 
   <main>
-    <section>
-      <h2>About Me</h2>
-      <p>Certified AWS Solutions Architect and self-taught Cloud Engineer with hands-on experience in AWS, Python,
-        Terraform, Docker, and CI/CD. Skilled in AWS VPC, Kubernetes, Linux environments, network security, and virtual
-        network management. Passionate about automation, cloud security, scalable infrastructure, and continuous
-        learning.</p>
-    </section>
-    <section>
-      <h2>Skills</h2>
-      <div class="skills-group">
-        <p><strong>Cloud & DevOps:</strong><br>
-          AWS (EC2, S3, VPC, IAM, RDS, Lambda, CloudFormation, CloudWatch), Terraform, Docker, Kubernetes, GitHub (with
-          Actions), GitLab,
-          AWS CLI
-        </p>
-        <p><strong>Programming & Tools:</strong><br>
-          Python, Java, Git, Bash, Amazon CLI, MATLAB, WordPress
-        </p>
-        <p><strong>Machine Learning & Frameworks:</strong><br>
-          TensorFlow, YOLO, KNN, OpenCV, Scikit-learn, NumPy
-        </p>
-        <p><strong>Infrastructure & Virtualization:</strong><br>
-          Networking, VMware vSphere, Security Groups, Infrastructure as Code
-        </p>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__label">About</p>
+          <h2 class="section__title">Engineering cloud systems with intent</h2>
+          <p class="section__subtitle">
+            Certified AWS Solutions Architect with hands-on delivery across IaC, serverless, and production operations.
+          </p>
+        </div>
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p>
+              I build and operate AWS infrastructure with Terraform, Python, and CI/CD — from VPC networking and
+              Kubernetes to serverless APIs and global static delivery. My focus is automation, least-privilege security,
+              and systems that are easy to run and easy to improve.
+            </p>
+            <p>
+              Recent work includes cost observability dashboards, contact-enabled static sites on CloudFront, and
+              modular Terraform architectures designed for reuse and safe deployments.
+            </p>
+          </div>
+          <div class="about__highlights reveal reveal-delay-1">
+            <div class="stat-card">
+              <div class="stat-card__value">AWS SAA</div>
+              <div class="stat-card__label">Solutions Architect certified</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value">99.9%</div>
+              <div class="stat-card__label">Uptime on managed workloads</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value">15+</div>
+              <div class="stat-card__label">EC2 instances operated</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value">IaC</div>
+              <div class="stat-card__label">Terraform-first delivery</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Projects</h2>
-      <ul class="projects">
-        <li>
-          <strong><a href="https://github.com/umarxkhan/secure-scalable-s3-static-site-aws-terraform" target="_blank"
-              class="link-arrow">
-              Serverless Contact-Enabled Scalable AWS Static Site (Terraform)
-            </a></strong><br>
-          Built a modular, production-grade AWS infrastructure to host a static website on S3 with HTTPS via ACM-secured
-          CloudFront. Developed a serverless Lambda-based contact form API (Python), integrated with API Gateway,
-          DynamoDB for message persistence, and SNS for email notifications. Leveraged Origin Access Control for S3
-          security and automated deployment with PowerShell. Focused on scalability, least-privilege IAM, and clean
-          Terraform module design.
-        </li>
-        <li>
-          <strong><a href="https://github.com/umarxkhan/terraform-aws-project" target="_blank" class="link-arrow">
-              AWS VPC and EC2 Infrastructure Setup (Terraform)
-            </a></strong><br>
-          Modular VPC setup with EC2 using Terraform. <em>Tech:</em> Terraform, AWS VPC, EC2, Subnets, Route Tables,
-          Security Groups, GitHub.
-        </li>
-        <li>
-          <strong><a href="https://github.com/umarxkhan/terraform-aws-s3-static-site" target="_blank"
-              class="link-arrow">
-              AWS S3 Static Website Deployment (Terraform)
-            </a></strong><br>
-          Automated S3 bucket provisioning and static site hosting. <em>Tech:</em> Terraform, AWS S3, IAM Policies,
-          GitHub.
-        </li>
-        <li>
-          <strong><a href="https://gitlab.com/umarxkhan/carlasim" target="_blank" class="link-arrow">
-              Autonomous Driving Simulation using CARLA
-            </a></strong><br>
-          Real-time object detection with YOLO and TensorFlow. <em>Tech:</em> CARLA, Python, YOLO, TensorFlow, KNN,
-          Radar/Camera Sensors.
-        </li>
-        <li>
-          <strong><a href="https://github.com/umarxkhan/Img_anl_obj_rec" target="_blank" class="link-arrow">
-              Image Analysis and Object Recognition
-            </a></strong><br>
-          Object detection and classification using deep learning models. <em>Tech:</em> Python, TensorFlow, OpenCV,
-          YOLO.
-        </li>
-        <li>
-          <strong><span style="color: #004080;">Thesis:</span></strong> Digital Twin for RC Beam (12/2024 - 06/2025)<br>
-          Python-integrated Abaqus model based on DFOS data. <em>Tech:</em> Python, Abaqus, XFEM, CZM, CDP, DFOS.
-        </li>
-
-
-      </ul>
-    </section>
-    <section>
-      <h2>Work Experience</h2>
-      <p style="color: #004080;"><strong>Freelance AWS Operations & Web Designer</strong> (05/2023 - 07/2025)</p>
-      <ul>
-        <li>Managed AWS infrastructure (15+ EC2, 10+ S3, 3 RDS) with 99.9% uptime.</li>
-        <li>Secured infrastructure with IAM roles, VPCs, and CloudWatch alerts, reducing incident response by 40%.</li>
-        <li>Implemented payment setups and delivered 12+ WordPress websites with faster load times and high client
-          satisfaction.</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Education</h2>
-      <p style="margin-bottom: 2px;color: #004080;">
-        <strong>MSc Digital Engineering</strong><br />
-        <span style="font-style: normal; font-size: 1em; color: #222;">Bauhaus University Weimar, Germany (09/2021 -
-          07/2025)</span>
-      </p>
-      <p style="font-size: 0.85em; font-style: italic; color: #555; margin-top: 2px;">
-        Relevant Courses: Object Oriented Programming, Algorithms & Data Structures, Software Engineering, Computer
-        Vision, Image Recognition
-      </p>
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__label">Skills</p>
+          <h2 class="section__title">Tools I use in production</h2>
+        </div>
+        <div class="skills__grid">
+          <article class="skill-card reveal">
+            <h3><span class="skill-card__icon">☁️</span> Cloud &amp; DevOps</h3>
+            <div class="tags">
+              <span class="tag">AWS EC2</span>
+              <span class="tag">S3</span>
+              <span class="tag">VPC</span>
+              <span class="tag">IAM</span>
+              <span class="tag">Lambda</span>
+              <span class="tag">CloudFront</span>
+              <span class="tag">DynamoDB</span>
+              <span class="tag">EventBridge</span>
+              <span class="tag">CloudWatch</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">GitHub Actions</span>
+            </div>
+          </article>
+          <article class="skill-card reveal reveal-delay-1">
+            <h3><span class="skill-card__icon">⌨️</span> Development</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Java</span>
+              <span class="tag">Bash</span>
+              <span class="tag">Git</span>
+              <span class="tag">HTML/CSS/JS</span>
+              <span class="tag">Chart.js</span>
+            </div>
+          </article>
+          <article class="skill-card reveal reveal-delay-2">
+            <h3><span class="skill-card__icon">🛡️</span> Infrastructure</h3>
+            <div class="tags">
+              <span class="tag">Networking</span>
+              <span class="tag">Security Groups</span>
+              <span class="tag">OAC</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Monitoring</span>
+              <span class="tag">Cost Explorer</span>
+            </div>
+          </article>
+          <article class="skill-card reveal reveal-delay-3">
+            <h3><span class="skill-card__icon">🧠</span> ML &amp; Research</h3>
+            <div class="tags">
+              <span class="tag">TensorFlow</span>
+              <span class="tag">YOLO</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">CARLA</span>
+              <span class="tag">Computer Vision</span>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__label">Projects</p>
+          <h2 class="section__title">Selected work</h2>
+          <p class="section__subtitle">
+            Production-minded builds that combine AWS serverless patterns, Terraform modules, and automated delivery.
+          </p>
+        </div>
 
-    <style>
-      .edu-university {
-        display: block;
-        margin-bottom: 4px;
-        /* less vertical space */
-      }
+        <div class="projects__grid">
+          <article class="project-card project-card--featured reveal" id="project-cloud-cost">
+            <div class="project-card__body">
+              <div class="project-card__top">
+                <h3 class="project-card__title">AWS Cloud Cost Calculator</h3>
+                <span class="project-card__badge">Featured</span>
+              </div>
+              <p class="project-card__desc">
+                A cloud-native cost monitoring dashboard with near real-time visibility into AWS spending. Automated
+                collection via Cost Explorer, historical storage in DynamoDB, and an interactive frontend delivered
+                globally through CloudFront — fully provisioned with Terraform and deployed via GitHub Actions.
+              </p>
+              <ul class="project-card__features">
+                <li>Category-based breakdown: Compute, Storage, Database, Networking, Others</li>
+                <li>Historical trends, forecasting, and Chart.js visualizations</li>
+                <li>EventBridge-scheduled Lambda pipeline with CloudWatch monitoring</li>
+                <li>CloudFront OAC, cache invalidation, and least-privilege IAM</li>
+                <li>Solved stale dashboard data with automated invalidation and cache-busting</li>
+              </ul>
+              <div class="tags" style="margin-bottom: 1.25rem;">
+                <span class="tag">S3</span>
+                <span class="tag">CloudFront</span>
+                <span class="tag">Lambda</span>
+                <span class="tag">DynamoDB</span>
+                <span class="tag">EventBridge</span>
+                <span class="tag">Route 53</span>
+                <span class="tag">Terraform</span>
+                <span class="tag">GitHub Actions</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://d2ksaxhe746mub.cloudfront.net/index.html" class="btn btn--primary" target="_blank"
+                  rel="noopener noreferrer">Live dashboard</a>
+                <a href="https://github.com/umarxkhan/AWS-Cloud-Cost-Calculator" class="btn btn--ghost"
+                  target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              </div>
+            </div>
+            <div class="project-card__media project-card__media--gallery" role="group"
+              aria-label="Project screenshots">
+              <div class="project-card__screenshots">
+                <figure class="project-card__figure project-card__figure--shot">
+                  <figcaption>Overview &amp; alerts</figcaption>
+                  <button type="button" class="project-card__zoom"
+                    data-lightbox-src="images/cloud-cost-overview.png"
+                    data-lightbox-alt="Cloud Cost Calculator overview with budget alert"
+                    data-lightbox-caption="Overview &amp; alerts">
+                    <img src="images/cloud-cost-overview.png" alt="" loading="lazy" decoding="async" />
+                  </button>
+                </figure>
+                <figure class="project-card__figure project-card__figure--shot">
+                  <figcaption>Daily trends</figcaption>
+                  <button type="button" class="project-card__zoom"
+                    data-lightbox-src="images/cloud-cost-charts.png"
+                    data-lightbox-alt="Spending comparison metrics and daily cost bar chart"
+                    data-lightbox-caption="Daily trends">
+                    <img src="images/cloud-cost-charts.png" alt="" loading="lazy" decoding="async" />
+                  </button>
+                </figure>
+                <figure class="project-card__figure project-card__figure--shot">
+                  <figcaption>Distribution &amp; forecast</figcaption>
+                  <button type="button" class="project-card__zoom"
+                    data-lightbox-src="images/cloud-cost-analytics.png"
+                    data-lightbox-alt="Cost distribution donut chart and spending trend forecast"
+                    data-lightbox-caption="Distribution &amp; forecast">
+                    <img src="images/cloud-cost-analytics.png" alt="" loading="lazy" decoding="async" />
+                  </button>
+                </figure>
+              </div>
+              <p class="project-card__gallery-hint">Click any image to enlarge</p>
+              <figure class="project-card__figure project-card__figure--architecture">
+                <figcaption>Infrastructure architecture</figcaption>
+                <button type="button" class="project-card__zoom"
+                  data-lightbox-src="images/cloud-cost-architecture.png"
+                  data-lightbox-alt="AWS Cloud Cost Calculator infrastructure diagram"
+                  data-lightbox-caption="Infrastructure architecture">
+                  <img src="images/cloud-cost-architecture.png" alt="" loading="lazy" decoding="async" />
+                </button>
+              </figure>
+            </div>
+          </article>
+        </div>
 
-      .courses-line {
-        font-size: 0.85em;
-        font-style: italic;
-        color: #555;
-        margin-top: 0;
-        /* remove top margin */
-      }
-    </style>
+        <div class="projects__row" style="margin-top: 1.5rem;">
+          <article class="project-card project-card--compact reveal">
+            <div class="project-card__body">
+              <h3 class="project-card__title">
+                <a href="https://github.com/umarxkhan/secure-scalable-s3-static-site-aws-terraform" target="_blank"
+                  rel="noopener noreferrer">Serverless Contact-Enabled Static Site</a>
+              </h3>
+              <p class="project-card__desc">
+                Modular AWS stack: S3 + ACM CloudFront, Lambda contact API, API Gateway, DynamoDB, SNS. OAC security and
+                Terraform module design.
+              </p>
+              <div class="tags">
+                <span class="tag">Terraform</span>
+                <span class="tag">Lambda</span>
+                <span class="tag">API Gateway</span>
+              </div>
+            </div>
+          </article>
 
+          <article class="project-card project-card--compact reveal reveal-delay-1">
+            <div class="project-card__body">
+              <h3 class="project-card__title">
+                <a href="https://github.com/umarxkhan/terraform-aws-project" target="_blank"
+                  rel="noopener noreferrer">AWS VPC &amp; EC2 (Terraform)</a>
+              </h3>
+              <p class="project-card__desc">
+                Modular VPC with subnets, route tables, security groups, and EC2 — reusable Terraform layout.
+              </p>
+              <div class="tags">
+                <span class="tag">VPC</span>
+                <span class="tag">EC2</span>
+                <span class="tag">Terraform</span>
+              </div>
+            </div>
+          </article>
 
-    <style>
-      .edu-university {
-        display: block;
-        margin-bottom: 4px;
-        /* less vertical space */
-      }
+          <article class="project-card project-card--compact reveal reveal-delay-2">
+            <div class="project-card__body">
+              <h3 class="project-card__title">
+                <a href="https://github.com/umarxkhan/terraform-aws-s3-static-site" target="_blank"
+                  rel="noopener noreferrer">S3 Static Website (Terraform)</a>
+              </h3>
+              <p class="project-card__desc">
+                Automated S3 static hosting with public read policy, versioning, and GitHub Actions deployment.
+              </p>
+              <div class="tags">
+                <span class="tag">S3</span>
+                <span class="tag">IAM</span>
+                <span class="tag">CI/CD</span>
+              </div>
+            </div>
+          </article>
 
-      .courses-line {
-        font-size: 0.85em;
-        font-style: italic;
-        color: #555;
-        margin-top: 0;
-        /* remove top margin */
-      }
+          <article class="project-card project-card--compact reveal">
+            <div class="project-card__body">
+              <h3 class="project-card__title">
+                <a href="https://gitlab.com/umarxkhan/carlasim" target="_blank" rel="noopener noreferrer">CARLA
+                  Autonomous Driving Sim</a>
+              </h3>
+              <p class="project-card__desc">
+                Real-time object detection with YOLO and TensorFlow in CARLA simulation environments.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">YOLO</span>
+                <span class="tag">CARLA</span>
+              </div>
+            </div>
+          </article>
 
-      .courses-label {
-        font-weight: normal;
-        margin-right: 4px;
-      }
-    </style>
+          <article class="project-card project-card--compact reveal reveal-delay-1">
+            <div class="project-card__body">
+              <h3 class="project-card__title">
+                <a href="https://github.com/umarxkhan/Img_anl_obj_rec" target="_blank" rel="noopener noreferrer">Image
+                  Analysis &amp; Object Recognition</a>
+              </h3>
+              <p class="project-card__desc">
+                Deep learning pipeline for object detection and classification with TensorFlow and OpenCV.
+              </p>
+              <div class="tags">
+                <span class="tag">TensorFlow</span>
+                <span class="tag">OpenCV</span>
+              </div>
+            </div>
+          </article>
 
-
-    <style>
-      .courses-label {
-        font-size: 0.85em;
-        font-style: italic;
-        color: #555;
-        font-weight: normal;
-        margin-right: 4px;
-      }
-    </style>
-
-    <section>
-      <h2>Certifications & Training</h2>
-      <ul class="certificates">
-        <li><a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/247a783be81e4b35bfaeaa7c2f49250f"
-            target="_blank" rel="noopener noreferrer" class="link-arrow">
-            AWS Certified Solutions Architect - Associate (Dec 2024)
-          </a></li>
-        <li><a href="https://www.credly.com/badges/6165e5f7-ee56-42c2-b804-256fa15f0f01" target="_blank"
-            rel="noopener noreferrer" class="link-arrow">
-            Solutions Architect Knowledge Badge Assessment (Dec 2024)
-          </a></li>
-      </ul>
+          <article class="project-card project-card--compact reveal reveal-delay-2">
+            <div class="project-card__body">
+              <h3 class="project-card__title">Thesis: Digital Twin for RC Beam</h3>
+              <p class="project-card__desc">
+                Python-integrated Abaqus model using DFOS data (12/2024 – 06/2025). XFEM, CZM, CDP methods.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Abaqus</span>
+                <span class="tag">DFOS</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
-    <section>
-      <h2>Professional Training</h2>
-      <ul class="certificates">
-        <li>
-          Docker Certified Associate (DCA) <span class="training-info">Completed via A Cloud Guru, March 2025</span>
-        </li>
-        <li>
-          HashiCorp Certified Terraform Associate <span class="training-info">Completed via A Cloud Guru, February
-            2025</span>
-        </li>
-        <li>
-          Introduction to Kubernetes <span class="training-info">Completed via A Cloud Guru, January 2025</span>
-        </li>
-        <li>
-          AWS Certified Solutions Architect - Associate (SAA-C03) <span class="training-info">Completed via A Cloud
-            Guru, November 2024</span>
-        </li>
-        <li>
-          AWS Certified Developer - Associate (DVA-C02) <span class="training-info">Completed via A Cloud Guru, August
-            2024</span>
-        </li>
-      </ul>
+
+    <section class="section section--alt" id="experience">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__label">Experience</p>
+          <h2 class="section__title">Professional background</h2>
+        </div>
+        <div class="timeline reveal">
+          <div class="timeline__item">
+            <h3 class="timeline__role">Freelance AWS Operations &amp; Web Designer</h3>
+            <p class="timeline__period">May 2023 – July 2025</p>
+            <ul class="timeline__list">
+              <li>Managed AWS infrastructure (15+ EC2, 10+ S3, 3 RDS) with 99.9% uptime.</li>
+              <li>Hardened environments with IAM, VPC design, and CloudWatch alerting — faster incident response.</li>
+              <li>Delivered 12+ WordPress sites with improved performance and client satisfaction.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section__header reveal" style="margin-top: 3rem;">
+          <p class="section__label">Education</p>
+          <h2 class="section__title">Academic foundation</h2>
+        </div>
+        <div class="info-grid reveal">
+          <div class="info-card">
+            <h3>MSc Digital Engineering</h3>
+            <p>Bauhaus University Weimar, Germany · Sep 2021 – Jul 2025</p>
+            <p style="margin-top: 0.75rem; font-style: italic;">
+              OOP, Algorithms &amp; Data Structures, Software Engineering, Computer Vision, Image Recognition
+            </p>
+          </div>
+          <div class="info-card">
+            <h3>Languages</h3>
+            <ul>
+              <li>English — C2 (Native/Bilingual)</li>
+              <li>German — A2</li>
+              <li>Urdu / Hindi / Punjabi — C2</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section__header reveal" style="margin-top: 3rem;">
+          <p class="section__label">Credentials</p>
+          <h2 class="section__title">Certifications &amp; training</h2>
+        </div>
+        <ul class="cert-list reveal">
+          <li>
+            <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/247a783be81e4b35bfaeaa7c2f49250f"
+              target="_blank" rel="noopener noreferrer">
+              <span>AWS Solutions Architect – Associate</span>
+              <span>Dec 2024</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.credly.com/badges/6165e5f7-ee56-42c2-b804-256fa15f0f01" target="_blank"
+              rel="noopener noreferrer">
+              <span>Solutions Architect Knowledge Badge</span>
+              <span>Dec 2024</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="cert-list cert-list--plain reveal" style="margin-top: 0.65rem;">
+          <li><span>Docker Certified Associate (DCA)</span><span>A Cloud Guru · Mar 2025</span></li>
+          <li><span>Terraform Associate (HashiCorp)</span><span>A Cloud Guru · Feb 2025</span></li>
+          <li><span>Introduction to Kubernetes</span><span>A Cloud Guru · Jan 2025</span></li>
+          <li><span>AWS Developer – Associate (DVA-C02)</span><span>A Cloud Guru · Aug 2024</span></li>
+        </ul>
+      </div>
     </section>
 
-    <style>
-      .training-info {
-        font-size: 0.85em;
-        font-style: italic;
-        color: #555;
-        margin-left: 6px;
-      }
-    </style>
-
-    <section>
-      <h2>Languages</h2>
-      <ul>
-        <li>English - C2 (Native/Bilingual)</li>
-        <li>German - A2 (Limited Working Proficiency)</li>
-        <li>Urdu/Hindi/Punjabi - C2 (Native/Bilingual)</li>
-
-      </ul>
-    </section>
-    <section>
-      <h2>Contact Me</h2>
-      <form id="contactForm">
-        <label for="name">Name:</label><br />
-        <input type="text" id="name" name="name" required /><br />
-
-        <label for="email">Email:</label><br />
-        <input type="email" id="email" name="email" required /><br />
-
-        <label for="message">Message:</label><br />
-        <textarea id="message" name="message" rows="5" required></textarea><br />
-
-        <button type="submit">Send</button>
-      </form>
-      <p id="formStatus"></p>
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__label">Contact</p>
+          <h2 class="section__title">Let’s build something reliable</h2>
+          <p class="section__subtitle">Open to DevOps, cloud engineering, and infrastructure roles. Send a message — I
+            typically respond within 48 hours.</p>
+        </div>
+        <div class="contact__grid">
+          <div class="contact__info reveal">
+            <p>
+              Whether you’re hiring, collaborating on a project, or exploring my
+              <a href="https://d2ksaxhe746mub.cloudfront.net/index.html" target="_blank" rel="noopener noreferrer">Cloud Cost Calculator</a>
+              — I’d like to hear from you.
+            </p>
+            <div class="contact__channels">
+              <a href="mailto:mubarak.khan@outlook.com">mubarak.khan@outlook.com</a>
+              <a href="tel:+4915758196984">+49 1575 8196984</a>
+              <a href="https://linkedin.com/in/khanmubarak" target="_blank" rel="noopener noreferrer">linkedin.com/in/khanmubarak</a>
+              <span>Weimar, Germany</span>
+            </div>
+          </div>
+          <form class="form reveal reveal-delay-1" id="contactForm" novalidate>
+            <div class="form__group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name" />
+            </div>
+            <div class="form__group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+            <div class="form__group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Send message</button>
+            <p id="formStatus" class="form__status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
     </section>
   </main>
-  <footer>
-    <a href="impressum.html" style="color: #004080; text-decoration: none;">Impressum</a>
-    &middot;
-    <a href="datenschutz.html" style="color: #004080; text-decoration: none;">Datenschutz</a>
-    <br />
-    &copy; 2026 Mubarak Ahmad Khan. All rights reserved.
+
+  <div id="lightbox" class="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="lightboxCaption">
+    <div class="lightbox__backdrop" data-lightbox-close tabindex="-1"></div>
+    <div class="lightbox__panel">
+      <button type="button" class="lightbox__close" data-lightbox-close aria-label="Close image">×</button>
+      <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+      <p class="lightbox__caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <nav class="footer__links" aria-label="Legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+      <p>&copy; 2026 Mubarak Ahmad Khan. All rights reserved.</p>
+    </div>
   </footer>
-  <script>
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('formStatus');
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const data = {
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        message: form.message.value.trim(),
-      };
-
-      try {
-        status.textContent = 'Sending...';
-
-        const response = await fetch('https://tzf78jd52c.execute-api.us-east-1.amazonaws.com/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        });
-
-        if (response.ok) {
-          status.textContent = 'Message sent successfully. Thank you!';
-          form.reset();
-        } else {
-          const errorData = await response.json();
-          status.textContent = 'Error: ' + (errorData.message || 'Failed to send message.');
-        }
-      } catch (error) {
-        status.textContent = 'Network error: Could not send message.';
-      }
-    });
-  </script>
+  <script src="js/main.js" defer></script>
 </body>
 
 </html>

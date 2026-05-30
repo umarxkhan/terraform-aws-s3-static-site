@@ -1,35 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
-  <title>404 - Page Not Found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 | Mubarak Ahmad Khan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Outfit:wght@700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
   <style>
-    body {
-      font-family: sans-serif;
-      background-color: #f2f2f2;
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding-top: 100px;
-      color: #333;
+      padding: 2rem;
     }
-    h1 {
-      font-size: 4rem;
-      color: #c00;
+
+    .error-page h1 {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 12vw, 7rem);
+      margin: 0;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    p {
-      font-size: 1.2rem;
-    }
-    a {
-      color: #004080;
-      text-decoration: none;
+
+    .error-page p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
     }
   </style>
 </head>
+
 <body>
-  <h1>404</h1>
-  <p>Oops! The page you’re looking for doesn’t exist.</p>
-  <p><a href="index.html">Go back to home</a></p>
-  <p style="margin-top: 40px; font-size: 0.9rem; color: #666;">
-    <a href="impressum.html">Impressum</a> &middot; <a href="datenschutz.html">Datenschutz</a>
-  </p>
+  <div class="error-page">
+    <h1>404</h1>
+    <p>The page you’re looking for doesn’t exist.</p>
+    <p style="margin-top: 1.5rem;"><a href="index.html" class="btn btn--primary">Back to portfolio</a></p>
+    <nav class="footer__links" style="margin-top: 2.5rem;">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
 </body>
+
 </html>
