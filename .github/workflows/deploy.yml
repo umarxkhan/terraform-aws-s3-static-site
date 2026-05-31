@@ -21,11 +21,32 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Check content in site-content
-        run: ls -l site-content
+        run: ls -la site-content && ls -la site-content/images 2>/dev/null || true
+
+      - name: Bust browser cache for profile image
+        run: |
+          CACHE_TAG=$(git rev-parse --short HEAD)
+          sed -i "s|src=\"job_pic.jpg[^\"]*\"|src=\"job_pic.jpg?v=${CACHE_TAG}\"|g" site-content/index.html
+          grep 'job_pic.jpg' site-content/index.html
 
       - name: Sync website content to S3
         run: |
-          aws s3 sync site-content/ s3://mubarak.khan.cloud1.engineer --delete
+          BUCKET="mubarak.khan.cloud1.engineer"
+          aws s3 sync site-content/ "s3://${BUCKET}" --delete \
+            --cache-control "public, max-age=0, must-revalidate"
+
+      - name: Invalidate CloudFront cache
+        env:
+          DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+        run: |
+          if [ -z "$DISTRIBUTION_ID" ]; then
+            echo "::warning::CLOUDFRONT_DISTRIBUTION_ID secret is not set. If your site uses CloudFront, add this secret or the old profile photo may keep showing until the CDN TTL expires."
+            exit 0
+          fi
+          aws cloudfront create-invalidation \
+            --distribution-id "$DISTRIBUTION_ID" \
+            --paths "/*"
+          echo "CloudFront invalidation started for distribution $DISTRIBUTION_ID"
 
       - name: Who am I?
         run: aws sts get-caller-identity

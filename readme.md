@@ -60,6 +60,20 @@ It uploads the content from the `site-content` directory and sets the bucket pol
 
 8. Push your changes to the `main` branch to trigger GitHub Actions and deploy your site automatically.
 
+### Profile photo or assets not updating on the live site?
+
+If you use **CloudFront** in front of S3 (recommended for HTTPS), the deploy workflow must invalidate the CDN cache. Add a GitHub repository secret:
+
+* `CLOUDFRONT_DISTRIBUTION_ID` — your CloudFront distribution ID (e.g. `E1234ABCDEF`)
+
+Each deploy also appends a git commit hash to `job_pic.jpg` in `index.html` so browsers fetch the new file. After pushing to `main`, confirm the **Deploy Static Website to S3** workflow succeeded under Actions.
+
+**Quick checks:**
+
+1. `job_pic.jpg` is committed: `git ls-files site-content/job_pic.jpg`
+2. Push went to **`main`** (the workflow only runs on that branch)
+3. Hard-refresh the site: `Ctrl+Shift+R` (Windows) or `Cmd+Shift+R` (Mac)
+
 ## GitHub Actions Workflow
 
 The `.github/workflows/deploy.yml` file uses GitHub Actions to sync your `site-content/` directory to the S3 bucket on every push to the `main` branch.
