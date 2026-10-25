@@ -1,137 +1,75 @@
 # Terraform AWS S3 Static Website
 
-This Terraform project provisions an AWS S3 bucket configured to host a static website.  
-It uploads the content from the `site-content` directory and sets the bucket policy to allow public read access.
+This repository provisions the personal portfolio of **Mubarak Ahmad Khan** — Full Stack Software Engineer & Cloud/DevOps Specialist (AWS Certified Solutions Architect).
 
-## Features
+The site is a static, dependency-free HTML/CSS/JS application (React showcased via the featured SaaS project) hosted on **S3 + CloudFront** and provisioned entirely with **Terraform**. Deployment is automated with **GitHub Actions**.
 
-- Creates an S3 bucket with website hosting enabled  
-- Configures index and error documents (`index.html` and `error.html`)  
-- Sets public access policies to allow website access  
-- Uploads static files from `site-content` folder  
-- Outputs the website URL after deployment  
-- Automates deployment to S3 using GitHub Actions  
+## Site structure
 
-## Prerequisites
+```
+.
+├── main.tf                    # S3 bucket, website config, policy, versioning, file uploads
+├── variables.tf               # Variable definitions
+├── outputs.tf                 # Outputs (bucket name, website endpoint)
+├── site-content/              # Static site assets (uploaded by Terraform)
+│   ├── index.html             # Home page (overhauled, dark-first design system)
+│   ├── error.html             # CloudFront/S3 error page
+│   ├── impressum.html         # Legal page (German)
+│   ├── datenschutz.html       # Privacy page (German)
+│   ├── job_pic.jpg            # Profile photo
+│   ├── css/styles.css          # Design tokens (slate/navy + teal/cyan), dark/light themes
+│   ├── js/main.js             # Theme toggle, nav, scroll spy, reveal, lightbox, contact form
+│   └── images/                # Project screenshots & architecture diagrams
+└── .github/workflows/deploy.yml  # CI/CD: sync to S3 + CloudFront invalidation
+```
 
-- Terraform installed (v1.0+ recommended)  
-- AWS CLI configured with appropriate credentials (for local use)  
-- GitHub repository with GitHub Actions enabled (for CI/CD)  
-- Unique S3 bucket name (S3 bucket names must be globally unique)  
+## Local testing
 
-## Usage
+No build step is required — the site is vanilla HTML/CSS/JS. Open `site-content/index.html` directly in a browser, or serve it locally:
 
-1. Update `terraform.tfvars` with the desired bucket name:
+```bash
+# Python 3
+python -m http.server 8000 --directory site-content
+# then open http://localhost:8000
+```
+
+> Note: the contact form posts to a live API Gateway endpoint, so submissions from `localhost` will already reach the existing backend.
+
+## Deploying with Terraform
+
+1. Set the bucket name:
+
    ```hcl
-   bucket_name = "your.unique.bucket.name"
-   ````
+   # terraform.tfvars (create if missing)
+   bucket_name = "your.globally.unique.bucket.name"
+   ```
 
-2. Initialize Terraform:
+2. Initialize and apply:
 
    ```bash
    terraform init
-   ```
-
-3. Review the execution plan:
-
-   ```bash
    terraform plan
-   ```
-
-4. Apply the changes:
-
-   ```bash
    terraform apply
    ```
 
-5. After successful apply, the website URL will be displayed in the output:
+3. Terraform uploads every file under `site-content/` and prints the website endpoint.
 
-   ```bash
-   website_url = http://your.unique.bucket.name.s3-website-<region>.amazonaws.com
-   ```
+## CI/CD (GitHub Actions)
 
-6. Open the URL in your browser to see your static website.
+`.github/workflows/deploy.yml` runs on every push to `main`:
 
-7. (Optional) Set up GitHub Secrets in your repository for AWS credentials and region:
+- Syncs `site-content/` to S3 with `--delete`
+- Appends the git commit hash to the profile image URL to bust browser caches
+- Invalidates CloudFront (requires the `CLOUDFRONT_DISTRIBUTION_ID` secret)
 
-   * `AWS_ACCESS_KEY_ID`
-   * `AWS_SECRET_ACCESS_KEY`
-   * `AWS_REGION`
+Required repository secrets: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`, and optionally `CLOUDFRONT_DISTRIBUTION_ID`.
 
-8. Push your changes to the `main` branch to trigger GitHub Actions and deploy your site automatically.
+## CloudFront
 
-### Profile photo or assets not updating on the live site?
-
-If you use **CloudFront** in front of S3 (recommended for HTTPS), the deploy workflow must invalidate the CDN cache. Add a GitHub repository secret:
-
-* `CLOUDFRONT_DISTRIBUTION_ID` — your CloudFront distribution ID (e.g. `E1234ABCDEF`)
-
-Each deploy also appends a git commit hash to `job_pic.jpg` in `index.html` so browsers fetch the new file. After pushing to `main`, confirm the **Deploy Static Website to S3** workflow succeeded under Actions.
-
-**Quick checks:**
-
-1. `job_pic.jpg` is committed: `git ls-files site-content/job_pic.jpg`
-2. Push went to **`main`** (the workflow only runs on that branch)
-3. Hard-refresh the site: `Ctrl+Shift+R` (Windows) or `Cmd+Shift+R` (Mac)
-
-## GitHub Actions Workflow
-
-The `.github/workflows/deploy.yml` file uses GitHub Actions to sync your `site-content/` directory to the S3 bucket on every push to the `main` branch.
-It uses the AWS credentials stored in GitHub Secrets and does **not** apply ACLs since the bucket policy handles permissions.
-
-```yaml
-name: Deploy Static Website to S3
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
-      - name: Sync website content to S3
-        run: aws s3 sync site-content/ s3://your.unique.bucket.name --delete
-
-      - name: Verify deployment
-        run: aws sts get-caller-identity
-```
-
-## Structure
-
-```
-terraform-s3-static-site/
-├── main.tf               # S3 bucket and website config resources
-├── variables.tf          # Variable definitions
-├── outputs.tf            # Outputs the website URL
-├── terraform.tfvars      # Bucket name and other variable values
-├── site-content/         # Static website files (index.html, error.html, etc.)
-├── .github/
-│   └── workflows/
-│       └── deploy.yml    # GitHub Actions workflow for deployment
-```
+The S3 bucket is configured for public-read website hosting. When CloudFront fronts the bucket, the workflow's invalidation step clears the CDN cache on each deploy. For the strongest security posture, consider switching the bucket policy to CloudFront-only access via Origin Access Control (OAC) — see the [AWS Cloud Cost Calculator](https://github.com/umarxkhan/AWS-Cloud-Cost-Calculator) project for a reference implementation.
 
 ## Notes
 
-* Make sure the bucket name is globally unique.
-* The project sets `force_destroy = true` on the bucket, so the bucket and its contents will be deleted if you run `terraform destroy`.
-* Do **not** use `--acl public-read` with `aws s3 sync` if your bucket has ACLs disabled (which is the current best practice).
-* Use GitHub Secrets to store AWS credentials securely for the CI/CD pipeline.
-
----
-
-## License
-
-MIT License
+- Bucket names must be globally unique.
+- `aws_s3_bucket` uses `force_destroy = false` by default; the bucket and its contents are removed on `terraform destroy` only after emptying.
+- Do **not** pass `--acl public-read` to `aws s3 sync` — the bucket policy handles public reads.
