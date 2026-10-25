@@ -1010,7 +1010,6 @@ body.lightbox-open {
 .cert-list a {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
   padding: 0.85rem 1rem;
   background: var(--bg-elevated);
@@ -1027,6 +1026,7 @@ body.lightbox-open {
 }
 
 .cert-list a span:last-child {
+  margin-left: auto;
   color: var(--text-soft);
   font-size: 0.85rem;
 }
